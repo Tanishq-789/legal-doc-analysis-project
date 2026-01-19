@@ -1,2 +1,31 @@
-# legal-doc-analysis-project
-Intelligent Legal Document Analysis platform using engineering-inspired NLP methods and the Lawformer model to visualize concepts, detect ambiguity, and map procedural dependencies in statutes and contracts.
+# Intelligent Legal Document Analysis using NLP
+
+## 📜 About the Project
+
+The legal domain is characterized by vast amounts of unstructured textual data, making manual review time-consuming, expensive, and error-prone. This project is an end-to-end intelligent web application designed to bridge the gap between raw legal texts and actionable insights.
+
+By integrating classical engineering principles with state-of-the-art Natural Language Processing (specifically the **Lawformer** model), the system goes beyond simple search. It provides semantic understanding of legal documents, offering tools for automated summarization, risk detection, and structural visualization. The platform focuses on providing interpretable results for domain-specific areas like Contract, Criminal, and Education law.
+
+### ✨ Key Features
+
+* **📄 Intelligent Document Ingestion:** Automated OCR and preprocessing pipeline to handle scanned PDF statutes and contracts.
+* **☁️ Domain-Specific Concept Visualization:** Utilizes an engineering-inspired **"Knapsack Analogy"** algorithm to generate semantically weighted word clouds, prioritizing high-value legal concepts over mere high-frequency terms.
+* **⚠️ Automated Ambiguity Detection ("Fuzzy Words"):** Leverages Lawformer embeddings and cosine similarity thresholds to systematically flag vague legal expressions (e.g., "reasonable efforts," "due diligence") that may pose contractual risks.
+* **🔗 Procedural & Dependency Mapping:** Models legal processes using **Finite State Machines (FSMs)** and visualizes inter-clause citations using **Graph Theory**, making complex statutory structures easy to navigate.
+
+## 🛠️ Technology Stack
+
+This project follows a modern, scalable microservices architecture.
+
+### **Backend (Python)**
+* **Framework:** FastAPI (High-performance async API)
+* **ML/NLP Core:** `sentence-transformers` using pre-trained **Lawformer** (Legal-BERT) embeddings.
+* **Data Processing:** `pandas`, `numpy`, `networkx` (for graph algorithms).
+* **OCR:** `pdf2image`, `pytesseract`.
+
+### **Frontend (TypeScript/JavaScript)**
+* **Framework:** React (via Vite)
+* **UI Library:** Material-UI (MUI) for a professional component system.
+* **State Management:** Zustand.
+* **API Data Fetching:** TanStack Query (React Query).
+* **Visualizations:** `react-wordcloud`, `reactflow` (for interactive graphs).
