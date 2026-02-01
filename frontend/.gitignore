@@ -1,24 +1,31 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# 1. Environment & Virtual Environments
+venv/
+.env
+__pycache__/
+*.py[cod]
+*$py.class
 
-node_modules
-dist
-dist-ssr
-*.local
+# 2. Frontend Dependencies & Build
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+.eslintcache
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# 3. Backend Storage & Local Artifacts
+backend/uploads_storage/*
+!backend/uploads_storage/.gitkeep
+backend/logs/
+
+# 4. Machine Learning & Transformer Artifacts
+# Prevents accidental upload of large model weights
+.cache/
+.huggingface/
+*.bin
+*.pt
+*.onnx
+
+# 5. OS Specific Files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
+.vscode/
+.idea/
