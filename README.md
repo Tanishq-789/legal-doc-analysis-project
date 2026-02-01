@@ -1,35 +1,41 @@
-# Intelligent Legal Document Analysis using NLP
+# LegalDoc AI: Intelligent Document Analysis Framework
 
-## 📜 About the Project
+An engineering-inspired NLP framework designed to classify, analyze, and visualize scope-limited legal documents. This project leverages **Lawformer** (Legal-BERT) for semantic understanding and **Graph Theory** for information density optimization.
 
-The legal domain is characterized by vast amounts of unstructured textual data, making manual review time-consuming, expensive, and error-prone. This project is an end-to-end intelligent web application designed to bridge the gap between raw legal texts and actionable insights.
 
-By integrating classical engineering principles with state-of-the-art Natural Language Processing (specifically the **Lawformer** model), the system goes beyond simple search. It provides semantic understanding of legal documents, offering tools for automated summarization, risk detection, and structural visualization. The platform focuses on providing interpretable results for domain-specific areas like Contract, Criminal, and Education law.
 
-### ✨ Key Features
+## 🚀 Key Engineering Pillars
 
-* **📄 Intelligent Document Ingestion:** Automated OCR and preprocessing pipeline to handle scanned PDF statutes and contracts.
-* **☁️ Domain-Specific Concept Visualization:** Utilizes an engineering-inspired **"Knapsack Analogy"** algorithm to generate semantically weighted word clouds, prioritizing high-value legal concepts over mere high-frequency terms.
-* **⚠️ Automated Ambiguity Detection ("Fuzzy Words"):** Leverages Lawformer embeddings and cosine similarity thresholds to systematically flag vague legal expressions (e.g., "reasonable efforts," "due diligence") that may pose contractual risks.
-* **🔗 Procedural & Dependency Mapping:** Models legal processes using **Finite State Machines (FSMs)** and visualizes inter-clause citations using **Graph Theory**, making complex statutory structures easy to navigate.
+### 1. Vector Space Model (VSM) Classifier
+Documents are numerically represented in a high-dimensional space. The system calculates the **Cosine Proximity** between the document vector and domain centroids (Criminal, Contract, Education) to perform automated classification.
 
-## 🛠️ Technology Stack
+### 2. Graph Centrality Word Clouds
+Unlike standard frequency-based clouds, our system builds a **Co-occurrence Graph** of legal terms. **Degree Centrality** is used to identify semantically "influential" terms, which are then passed to our visualization engine.
 
-This project follows a modern, scalable microservices architecture.
+### 3. Greedy Knapsack Selection
+To manage "Information Density," the system treats terms as items in a Knapsack problem. It selects the most "valuable" terms (highest centrality) that fit within a limited visual "budget," preventing UI clutter.
 
-### **Backend (Python)**
-* **Framework:** FastAPI (High-performance async API)
-* **ML/NLP Core:** `sentence-transformers` using pre-trained **Lawformer** (Legal-BERT) embeddings.
-* **Data Processing:** `pandas`, `numpy`, `networkx` (for graph algorithms).
-* **OCR:** `pdf2image`, `pytesseract`.
+## 🛠️ Tech Stack
+- **Backend:** FastAPI (Python), PyMuPDF, NetworkX, PyTorch, Lawformer (Transformers)
+- **Frontend:** React 19, Vite, Material UI, Zustand, React-TagCloud
 
-### **Frontend (TypeScript/JavaScript)**
-* **Framework:** React (via Vite)
-* **UI Library:** Material-UI (MUI) for a professional component system.
-* **State Management:** Zustand.
-* **API Data Fetching:** TanStack Query (React Query).
-* **Visualizations:** `react-wordcloud`, `reactflow` (for interactive graphs).
+## ⚙️ Local Setup
 
+### Backend
+1. `cd backend`
+2. `python -m venv venv`
+3. `source venv/bin/activate` (or `venv\Scripts\activate` on Windows)
+4. `pip install -r requirements.txt`
+5. `uvicorn app.main:app --reload`
+
+### Frontend
+1. `cd frontend`
+2. `npm install --legacy-peer-deps`
+3. `npm run dev`
+
+## 📊 Methodology Reference
+This implementation follows the research methodology outlined in:
+*Tanishq Shinde, et al. "Intelligent Legal Document Analysis using NLP," Pune Institute of Computer Technology.*
 ## 🖼️ Dashboard Overview
 
 ### 1. Ingestion Phase (Beginning UI)
