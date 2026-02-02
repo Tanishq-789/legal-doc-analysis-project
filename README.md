@@ -19,6 +19,21 @@ To manage "Information Density," the system treats terms as items in a Knapsack 
 - **Backend:** FastAPI (Python), PyMuPDF, NetworkX, PyTorch, Lawformer (Transformers)
 - **Frontend:** React 19, Vite, Material UI, Zustand, React-TagCloud
 
+
+## 📅 Project Management & Task Distribution
+
+The development of **LegalDoc AI** followed a 15-week structured timeline, utilizing parallel task processing to ensure seamless integration between NLP models and the frontend interface.
+
+### Task Distribution Matrix
+| Task ID | Task Description | Assigned Member(s) | Start Week | End Week |
+| :--- | :--- | :--- | :--- | :--- |
+| **T1** | Requirement Gathering | All Members | 1 | 1 |
+| **T2** | Literature Review | Tanishq | 2 | 3 |
+| **T3** | Dataset Collection & Preprocessing | Nilakshi, Tanishq | 3 | 5 |
+| **T4** | Model Design & Training | Nilakshi | 4 | 8 |
+| **T5** | Backend Integration | Mansi | 6 | 10 |
+
+
 ## ⚙️ Local Setup
 
 ### Backend
