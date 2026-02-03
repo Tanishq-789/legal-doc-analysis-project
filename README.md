@@ -76,80 +76,79 @@ Visualization of domain-specific keywords selected through dynamic Graph Central
 │   ├── 📁 app
 │   │   ├── 📁 api
 │   │   │   ├── 📁 endpoints
-│   │   │   │   ├── 🐍 __init__.py
-│   │   │   │   ├── 🐍 analysis.py
-│   │   │   │   ├── 🐍 classify.py
-│   │   │   │   ├── 🐍 graph.py
-│   │   │   │   └── 🐍 upload.py
-│   │   │   └── 🐍 api_router.py
+│   │   │   │   ├── 🐍 __init__.py           # Package initializer for API endpoints
+│   │   │   │   ├── 🐍 analysis.py         # Orchestrates full document analysis pipeline
+│   │   │   │   ├── 🐍 classify.py         # Handles Vector Space Model (VSM) classification requests
+│   │   │   │   ├── 🐍 graph.py            # Serves Co-occurrence graph data and centrality scores
+│   │   │   │   └── 🐍 upload.py           # Manages file ingestion and PyMuPDF text extraction
+│   │   │   └── 🐍 api_router.py           # Main APIRouter linking all modular endpoints
 │   │   ├── 📁 core
-│   │   │   └── 🐍 __init__.py
+│   │   │   └── 🐍 __init__.py           # Global configurations and environment settings
 │   │   ├── 📁 db
-│   │   │   └── 🐍 __init__.py
+│   │   │   └── 🐍 __init__.py           # Database connection logic (if persistence is added)
 │   │   ├── 📁 ml
-│   │   │   ├── 🐍 __init__.py
-│   │   │   ├── 🐍 lawformer_handler.py
-│   │   │   └── 🐍 preprocessing.py
+│   │   │   ├── 🐍 __init__.py           # Package initializer for ML models
+│   │   │   ├── 🐍 lawformer_handler.py    # Interfaces with Lawformer for legal embeddings
+│   │   │   └── 🐍 preprocessing.py        # Cleans/tokenizes text for semantic processing
 │   │   ├── 📁 schemas
-│   │   │   └── 🐍 __init__.py
+│   │   │   └── 🐍 __init__.py           # Pydantic models for request/response validation
 │   │   ├── 📁 services
-│   │   │   ├── 🐍 __init__.py
-│   │   │   ├── 🐍 classifier_service.py
-│   │   │   ├── 🐍 clause_segmenter.py
-│   │   │   ├── 🐍 fuzzy_detector.py
-│   │   │   ├── 🐍 network_service.py
-│   │   │   ├── 🐍 ocr_service.py
-│   │   │   └── 🐍 term_selector.py
-│   │   ├── 🐍 __init__.py
-│   │   └── 🐍 main.py
+│   │   │   ├── 🐍 __init__.py           # Package initializer for business logic services
+│   │   │   ├── 🐍 classifier_service.py   # Executes Cosine Proximity logic against domain centroids
+│   │   │   ├── 🐍 clause_segmenter.py     # Breaks documents into logical legal clauses
+│   │   │   ├── 🐍 fuzzy_detector.py       # Identifies non-standard or "risky" legal phrasing
+│   │   │   ├── 🐍 network_service.py      # Builds NetworkX graphs and calculates Degree Centrality
+│   │   │   ├── 🐍 ocr_service.py          # Handles text extraction from image-based PDFs
+│   │   │   └── 🐍 term_selector.py        # Implements Greedy Knapsack for visual budget management
+│   │   ├── 🐍 __init__.py               # Top-level app package initializer
+│   │   └── 🐍 main.py                     # Entry point for the FastAPI application
 │   ├── 📁 tests
-│   │   └── 🐍 __init__.py
+│   │   └── 🐍 __init__.py               # Unit and integration tests for backend logic
 │   ├── 📁 uploads_storage
-│   │   └── 📕 Legal_NLP_Paper.pdf
-│   ├── ⚙️ .gitignore
-│   ├── 📄 requirements.dev.txt
-│   └── 📄 requirements.txt
+│   │   └── 📕 Legal_NLP_Paper.pdf         # Local directory for temporary storage of uploaded files
+│   ├── ⚙️ .gitignore                      # Excludes __pycache__ and sensitive environment files
+│   ├── 📄 requirements.dev.txt            # Development-only dependencies (pytest, black, etc.)
+│   └── 📄 requirements.txt                # Production dependencies (FastAPI, PyTorch, NetworkX)
 ├── 📁 frontend
 │   ├── 📁 public
-│   │   └── 🖼️ vite.svg
+│   │   └── 🖼️ vite.svg                    # Static assets for the React application
 │   ├── 📁 src
 │   │   ├── 📁 api
-│   │   │   ├── 📄 client.js
-│   │   │   └── 📄 documentApi.js
-│   │   ├── 📁 assets
+│   │   │   ├── 📄 client.js               # Global Axios/Fetch configuration
+│   │   │   └── 📄 documentApi.js          # Specific API calls for classification and graph data
+│   │   ├── 📁 assets                      # Global styles and static images
 │   │   ├── 📁 components
-│   │   │   └── 📄 FileUploadDemo.jsx
+│   │   │   └── 📄 FileUploadDemo.jsx      # Generic UI component for file drag-and-drop
 │   │   ├── 📁 features
-│   │   │   ├── 📁 dashboard
+│   │   │   ├── 📁 dashboard               # Layout for the primary overview page
 │   │   │   ├── 📁 risk-analysis
-│   │   │   │   ├── 📄 RiskHighlighter.jsx
-│   │   │   │   └── 📄 RiskView.jsx
-│   │   │   ├── 📁 structural-map
+│   │   │   │   ├── 📄 RiskHighlighter.jsx # Highlights anomalous clauses in the document view
+│   │   │   │   └── 📄 RiskView.jsx        # Dashboard widget for fuzzy logic results
+│   │   │   ├── 📁 structural-map          # Visualization for document node-link diagrams
 │   │   │   ├── 📁 upload
-│   │   │   │   └── 📄 DocumentUpload.jsx
+│   │   │   │   └── 📄 DocumentUpload.jsx  # Feature-specific logic for the upload workflow
 │   │   │   ├── 📁 visualization
-│   │   │   │   └── 📄 WordCloudView.jsx
-│   │   │   └── 📁 visualizations
-│   │   ├── 📁 hooks
+│   │   │   │   └── 📄 WordCloudView.jsx   # Renders React-TagCloud using Centrality scores
+│   │   │   └── 📁 visualizations          # Shared visualization helper components
+│   │   ├── 📁 hooks                       # Custom React hooks (e.g., useAnalysis)
 │   │   ├── 📁 store
-│   │   │   └── 📄 useDocStore.js
-│   │   ├── 📁 theme
-│   │   ├── 📁 utils
-│   │   ├── 🎨 App.css
-│   │   ├── 📄 App.jsx
-│   │   ├── 🎨 index.css
-│   │   └── 📄 main.jsx
-│   ├── ⚙️ .gitignore
-│   ├── 📝 README.md
-│   ├── 📄 eslint.config.js
-│   ├── 🌐 index.html
-│   ├── ⚙️ package-dev.json
-│   ├── ⚙️ package-lock.json
-│   ├── ⚙️ package.json
-│   └── 📄 vite.config.js
-├── ⚙️ .gitignore
-├── 📄 LICENSE
-└── 📝 README.md
+│   │   │   └── 📄 useDocStore.js          # Zustand store for managing global document state
+│   │   ├── 📁 theme                       # Material UI theme customization
+│   │   ├── 📁 utils                       # Helper functions (text formatting, math helpers)
+│   │   ├── 🎨 App.css                     # Global CSS rules
+│   │   ├── 📄 App.jsx                     # Main application routing and structure
+│   │   ├── 🎨 index.css                   # Root stylesheet
+│   │   └── 📄 main.jsx                    # React 19 entry point and DOM mounting
+│   ├── ⚙️ .gitignore                      # Excludes node_modules and build artifacts
+│   ├── 📝 README.md                       # Frontend-specific setup and documentation
+│   ├── 📄 eslint.config.js                # Linting rules for React 19/Vite
+│   ├── 🌐 index.html                     # HTML template for the SPA
+│   ├── ⚙️ package-dev.json                 # Optional dev-specific package configuration
+│   ├── ⚙️ package-lock.json                # Locked versioning for npm dependencies
+│   ├── ⚙️ package.json                     # Primary dependency manifest for the frontend
+│   └── 📄 vite.config.js                  # Configuration for the Vite build tool
+├── ⚙️ .gitignore                          # Root-level git exclusions
+├── 📄 LICENSE                             # Project licensing information
+└── 📝 README.md                           # Master documentation covering VSM, Graph Theory, and Knapsack logic
 ```
-
 ---
