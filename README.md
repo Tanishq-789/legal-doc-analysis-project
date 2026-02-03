@@ -67,3 +67,89 @@ Actual text extracted from the PDF via PyMuPDF, with semantic highlights generat
 Visualization of domain-specific keywords selected through dynamic Graph Centrality and Knapsack optimization.
 ![wordcloud](https://github.com/user-attachments/assets/d1748380-23a5-4a36-8603-6f4f944203bf)
 
+---
+
+### File Tree: legal-doc-analysis-project
+
+```
+├── 📁 backend
+│   ├── 📁 app
+│   │   ├── 📁 api
+│   │   │   ├── 📁 endpoints
+│   │   │   │   ├── 🐍 __init__.py
+│   │   │   │   ├── 🐍 analysis.py
+│   │   │   │   ├── 🐍 classify.py
+│   │   │   │   ├── 🐍 graph.py
+│   │   │   │   └── 🐍 upload.py
+│   │   │   └── 🐍 api_router.py
+│   │   ├── 📁 core
+│   │   │   └── 🐍 __init__.py
+│   │   ├── 📁 db
+│   │   │   └── 🐍 __init__.py
+│   │   ├── 📁 ml
+│   │   │   ├── 🐍 __init__.py
+│   │   │   ├── 🐍 lawformer_handler.py
+│   │   │   └── 🐍 preprocessing.py
+│   │   ├── 📁 schemas
+│   │   │   └── 🐍 __init__.py
+│   │   ├── 📁 services
+│   │   │   ├── 🐍 __init__.py
+│   │   │   ├── 🐍 classifier_service.py
+│   │   │   ├── 🐍 clause_segmenter.py
+│   │   │   ├── 🐍 fuzzy_detector.py
+│   │   │   ├── 🐍 network_service.py
+│   │   │   ├── 🐍 ocr_service.py
+│   │   │   └── 🐍 term_selector.py
+│   │   ├── 🐍 __init__.py
+│   │   └── 🐍 main.py
+│   ├── 📁 tests
+│   │   └── 🐍 __init__.py
+│   ├── 📁 uploads_storage
+│   │   └── 📕 Legal_NLP_Paper.pdf
+│   ├── ⚙️ .gitignore
+│   ├── 📄 requirements.dev.txt
+│   └── 📄 requirements.txt
+├── 📁 frontend
+│   ├── 📁 public
+│   │   └── 🖼️ vite.svg
+│   ├── 📁 src
+│   │   ├── 📁 api
+│   │   │   ├── 📄 client.js
+│   │   │   └── 📄 documentApi.js
+│   │   ├── 📁 assets
+│   │   ├── 📁 components
+│   │   │   └── 📄 FileUploadDemo.jsx
+│   │   ├── 📁 features
+│   │   │   ├── 📁 dashboard
+│   │   │   ├── 📁 risk-analysis
+│   │   │   │   ├── 📄 RiskHighlighter.jsx
+│   │   │   │   └── 📄 RiskView.jsx
+│   │   │   ├── 📁 structural-map
+│   │   │   ├── 📁 upload
+│   │   │   │   └── 📄 DocumentUpload.jsx
+│   │   │   ├── 📁 visualization
+│   │   │   │   └── 📄 WordCloudView.jsx
+│   │   │   └── 📁 visualizations
+│   │   ├── 📁 hooks
+│   │   ├── 📁 store
+│   │   │   └── 📄 useDocStore.js
+│   │   ├── 📁 theme
+│   │   ├── 📁 utils
+│   │   ├── 🎨 App.css
+│   │   ├── 📄 App.jsx
+│   │   ├── 🎨 index.css
+│   │   └── 📄 main.jsx
+│   ├── ⚙️ .gitignore
+│   ├── 📝 README.md
+│   ├── 📄 eslint.config.js
+│   ├── 🌐 index.html
+│   ├── ⚙️ package-dev.json
+│   ├── ⚙️ package-lock.json
+│   ├── ⚙️ package.json
+│   └── 📄 vite.config.js
+├── ⚙️ .gitignore
+├── 📄 LICENSE
+└── 📝 README.md
+```
+
+---
