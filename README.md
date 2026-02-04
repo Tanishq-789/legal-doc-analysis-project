@@ -30,7 +30,7 @@ The development of **LegalDoc AI** followed a 15-week structured timeline, utili
 | **T1** | Requirement Gathering | All Members | 1 | 1 |
 | **T2** | Literature Review | Tanishq | 2 | 3 |
 | **T3** | Dataset Collection & Preprocessing | Nilakshi, Tanishq | 3 | 5 |
-| **T4** | Model Design & Training | Nilakshi | 4 | 8 |
+| **T4** | Model Design & Training | Nilakshi, Vaishnavi | 4 | 8 |
 | **T5** | Backend Integration | Mansi | 6 | 10 |
 
 
