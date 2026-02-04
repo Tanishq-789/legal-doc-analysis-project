@@ -152,3 +152,44 @@ Visualization of domain-specific keywords selected through dynamic Graph Central
 └── 📝 README.md                           # Master documentation covering VSM, Graph Theory, and Knapsack logic
 ```
 ---
+# Legal Domain Classification Model
+
+## Model Description
+
+This repository hosts a specialized Transformer-based classifier fine-tuned to analyze unstructured legal documents and categorize them into three primary domains: **Criminal**, **Contract**, and **Education Law**. Developed as part of the research paper *"Intelligent Legal Document Analysis using NLP,"* the model addresses the complexities of legal jargon and statutory ambiguity through a scope-limited analytical framework.
+
+
+
+### Key Features
+* **Architecture**: Built on the **Legal-Longformer-Base-4096** to effectively process long-range dependencies in legal clauses up to 4,096 tokens.
+* **Mathematical Grounding**: Utilizes a **Vector Space Model (VSM)** to represent legal text as high-dimensional vectors, enabling precise similarity measurements and clustering.
+* **Engineering Optimized**: Integrates a **Knapsack-inspired analogy** for term selection, prioritizing the most informative legal expressions within a constrained scope.
+* **Interpretability**: Includes logic for **Fuzzy Word Identification**, flagging ambiguous terms like "reasonable time" to assist practitioners in identifying gray areas in legislation.
+
+### Model Links
+* **Hugging Face Hub**: [Tanishq77/legal-classifier-v1](https://huggingface.co/Tanishq77/legal-classifier-v1)
+* **Base Architecture**: [Saibo-creator/legal-longformer-base-4096](https://huggingface.co/Saibo-creator/legal-longformer-base-4096)
+
+---
+
+## Ethical Considerations
+
+As outlined in our research methodology, this model is intended for **educational and analytical purposes only**. It is not a substitute for professional legal advice. The framework assumes human oversight at every stage, with legal experts expected to validate outputs to prevent misinterpretation and misuse.
+
+
+
+## Citation
+
+If you use this model or the intelligent legal document analysis framework in your research, please cite our work:
+
+### BibTeX
+
+```bibtex
+@article{
+  title={Intelligent Legal Document Analysis using NLP},
+  author={Shinde, Tanishq and Sonawane, Nilakshi and Joshi, Sarang and Jangle, Mansi and Madavi, Vaishnavi},
+  journal={Dept. of Computer Engineering, Pune Institute of Computer Technology},
+  year={2026}
+}
+```
+---
