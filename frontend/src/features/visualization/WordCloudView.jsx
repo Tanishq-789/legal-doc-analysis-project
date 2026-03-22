@@ -1,28 +1,31 @@
 import React from 'react';
 import { TagCloud } from 'react-tagcloud';
-import { Box, Typography, Paper, CircularProgress } from '@mui/material';
-import useDocStore from '../../store/useDocStore';
+import { Box, Typography, Paper } from '@mui/material';
 
-const WordCloudView = () => {
-  const { analysisResults } = useDocStore();
+const WordCloudView = ({ words = [] }) => {
+  // Map our backend schema {text, value} to the component's {value, count}
+  const cloudData = words.map(w => ({
+    value: w.text,
+    count: w.value
+  }));
 
-  const data = React.useMemo(() => {
-    if (!analysisResults?.word_cloud) return [];
-    return analysisResults.word_cloud.map(item => ({
-      value: item.text,
-      count: item.value,
-    }));
-  }, [analysisResults]);
-
-  if (!analysisResults) return <CircularProgress />;
+  if (words.length === 0) {
+    return <Typography color="textSecondary">Waiting for Knapsack optimization...</Typography>;
+  }
 
   return (
-    <Paper elevation={3} sx={{ p: 4, borderRadius: 3, textAlign: 'center', minHeight: 450 }}>
-      <Typography variant="h5" fontWeight="bold">Information Density Map</Typography>
-      <Box sx={{ mt: 4 }}>
-        <TagCloud minSize={18} maxSize={45} tags={data} colorOptions={{ luminosity: 'dark', hue: 'blue' }} />
+    <Paper elevation={0} sx={{ p: 3, textAlign: 'center', bgcolor: '#fafafa' }}>
+      <Typography variant="h6" gutterBottom>Keyword Information Density (Knapsack)</Typography>
+      <Box sx={{ p: 2 }}>
+        <TagCloud
+          minSize={12}
+          maxSize={45}
+          tags={cloudData}
+          onClick={tag => alert(`Term: ${tag.value}`)}
+        />
       </Box>
     </Paper>
   );
 };
+
 export default WordCloudView;
